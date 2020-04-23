@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1735025873681473802}
   - component: {fileID: 741157586}
   - component: {fileID: 6412868789255414150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}

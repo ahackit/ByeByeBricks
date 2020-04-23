@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6553847775418526373}
   - component: {fileID: 2096828377285761212}
   - component: {fileID: 2307535976907531677}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickFour
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3250687560571657818}
   - component: {fileID: 7718194170896975442}
   - component: {fileID: 8899489402969635645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrickThree
   m_TagString: Untagged
   m_Icon: {fileID: 0}

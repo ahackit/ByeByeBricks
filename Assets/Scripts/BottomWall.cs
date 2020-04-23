@@ -18,6 +18,12 @@ public class BottomWall : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log(collider.gameObject.layer);
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Item"))
+        {
+            Destroy(collider.gameObject);
+            return;
+        }
         Game game = FindObjectOfType<Game>();
         game.LoseLife();
         if (game.lives < 0)
