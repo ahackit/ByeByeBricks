@@ -38,6 +38,11 @@ public class Game : MonoBehaviour
     public void LoseLife()
     {
         lives -= 1;
+        if (lives < 0)
+        {
+            FindObjectOfType<LevelLoader>().LoadNextLevel();
+        }
         UpdateLifeText();
+
     }
 }
