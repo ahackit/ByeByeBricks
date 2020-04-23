@@ -8,9 +8,11 @@ public class Ball : MonoBehaviour
     [SerializeField] Paddle paddle;
 
     bool isFired = false;
+    float originalHeight;
     // Start is called before the first frame update
     void Start()
     {
+        originalHeight = transform.position.y;
 
     }
 
@@ -28,6 +30,12 @@ public class Ball : MonoBehaviour
             return;
         }
 
+    }
 
+    public void Reset()
+    {
+        transform.position = new Vector2(paddle.transform.position.x, originalHeight);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+        isFired = false;
     }
 }
