@@ -7,17 +7,14 @@ public class Game : MonoBehaviour
 {
 
     [SerializeField] Text scoreText;
+    [SerializeField] Text lifeText;
+    public int lives = 3;
     int score = 0;
     // Start is called before the first frame update
     void Start()
     {
         UpdateText();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        UpdateLifeText();
 
     }
 
@@ -31,5 +28,16 @@ public class Game : MonoBehaviour
         score += value;
         UpdateText();
 
+    }
+
+    private void UpdateLifeText()
+    {
+        lifeText.text = lives.ToString();
+    }
+
+    public void LoseLife()
+    {
+        lives -= 1;
+        UpdateLifeText();
     }
 }
