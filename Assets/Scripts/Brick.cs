@@ -6,7 +6,11 @@ public class Brick : MonoBehaviour
 {
 
     [SerializeField] Item[] items;
-    // Start is called before the first frame update
+
+    [SerializeField] int hitpoints;
+    [SerializeField] Sprite[] sprites;
+
+    int currentSpriteIndex = 0;
     void Start()
     {
 
@@ -20,8 +24,16 @@ public class Brick : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(items[0], transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        hitpoints -= 1;
+        if (hitpoints <= 0)
+        {
+            Instantiate(items[0], transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            return;
+        }
+
+        GetComponent<SpriteRenderer>().sprite = sprites[currentSpriteIndex];
+        currentSpriteIndex++;
 
     }
 }
