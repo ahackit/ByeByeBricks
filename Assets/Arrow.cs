@@ -7,6 +7,8 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     Vector3 previousPosition = new Vector3(0f, 0f, 0f);
     float currentDistance;
+
+    float currentRotation = 120f;
     Ball target;
     void Start()
     {
@@ -19,20 +21,19 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        // transform.position = new Vector2(target.transform.position.x * Vector2.Distance(target.transform.position, transform.position), transform.position.y);
-        // transform.RotateAround(target.transform.position, Vector3.forward, 30f * Time.deltaTime);
-        // Debug.Log("Ball");
-        // Debug.Log(target.transform.position);
-        // Debug.Log("Arrow");
-        // Debug.Log(transform.position);
-        // Debug.Log("Distance");
-        // Debug.Log(Vector2.Distance(transform.position, target.transform.position));
-        Debug.Log(currentDistance);
 
         float newX = target.transform.position.x - currentDistance;
-        Debug.Log(newX);
+        float currentZ = transform.rotation.eulerAngles.z;
         transform.position = new Vector2(newX, transform.position.y);
-        transform.RotateAround(target.transform.position, transform.forward, 120f * Time.deltaTime);
+        if (currentZ >= 180f && currentZ < 270f)
+        {
+            currentRotation = -120f;
+        }
+        else if (currentZ >= 0f && currentZ > 270f)
+        {
+            currentRotation = 120f;
+        }
+        transform.RotateAround(target.transform.position, transform.forward, currentRotation * Time.deltaTime);
         currentDistance = target.transform.position.x - transform.position.x;
 
     }
