@@ -26,6 +26,7 @@ public class BottomWall : MonoBehaviour
         }
         Game game = FindObjectOfType<Game>();
         game.LoseLife();
+        game.DecrementFiredBalls();
         if (game.lives < 0)
         {
             Destroy(collider.gameObject);

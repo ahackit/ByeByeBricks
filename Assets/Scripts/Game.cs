@@ -12,6 +12,11 @@ public class Game : MonoBehaviour
     [SerializeField] int selectedClass;
     public int lives = 3;
     int score = 0;
+
+    int maxFiredBalls = 1;
+    int currentFiredBalls;
+
+    float dropRate = .5f;
     // Start is called before the first frame update
 
     void Awake()
@@ -65,9 +70,41 @@ public class Game : MonoBehaviour
     public void SetClass(int classNumber)
     {
         selectedClass = classNumber;
+
+        if (classNumber == 1)
+        {
+            maxFiredBalls = 2;
+        }
+        else if (classNumber == 2)
+        {
+            dropRate = 1f;
+        }
     }
     public int GetClass()
     {
         return selectedClass;
+    }
+
+    public void IncrementFiredBalls()
+    {
+        currentFiredBalls += 1;
+    }
+    public void DecrementFiredBalls()
+    {
+        currentFiredBalls -= 1;
+    }
+    public bool CanFire()
+    {
+        if (currentFiredBalls == maxFiredBalls)
+        {
+            return false;
+        }
+        return true;
+
+    }
+
+    public float GetDropRate()
+    {
+        return dropRate;
     }
 }

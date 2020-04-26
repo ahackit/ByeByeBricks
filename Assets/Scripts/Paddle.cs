@@ -7,13 +7,26 @@ public class Paddle : MonoBehaviour
     [SerializeField] float paddleSpeed = 10f;
     [SerializeField] Sprite[] sprites;
     float direction;
+    int currentClass;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        Debug.Log(FindObjectOfType<Game>().GetClass());
-        GetComponent<SpriteRenderer>().sprite = sprites[FindObjectOfType<Game>().GetClass()];
+        currentClass = FindObjectOfType<Game>().GetClass();
+        GetComponent<SpriteRenderer>().sprite = sprites[currentClass];
+
+        switch (currentClass)
+        {
+            case 0:
+                transform.localScale = new Vector3(1.5f, 1f, 1f);
+                paddleSpeed = 8f;
+                break;
+            default:
+                break;
+
+        }
+
 
     }
 

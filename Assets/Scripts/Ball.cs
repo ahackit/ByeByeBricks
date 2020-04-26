@@ -31,6 +31,12 @@ public class Ball : MonoBehaviour
             transform.rotation = arrow.transform.rotation;
             GetComponent<Rigidbody2D>().velocity = transform.up * 6f;
             arrow.DestroySelf();
+            Game game = FindObjectOfType<Game>();
+            game.IncrementFiredBalls();
+            if (game.GetClass() == 1 && game.CanFire())
+            {
+                Instantiate(this, new Vector2(paddle.transform.position.x, originalHeight), Quaternion.identity);
+            }
         }
         if (!isFired)
         {

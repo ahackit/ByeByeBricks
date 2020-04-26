@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: -3787088482028934768, guid: 9f394122b929ab242878dfe6bdeaec77, type: 3}
+  bomb: {fileID: 4514705019102504068, guid: 65c1e58cf84fa3f4d95ae7af40493244, type: 3}
   hitpoints: 2
   sprites:
   - {fileID: 21300000, guid: 73973a3da131f2b44b49a15e0cb23be7, type: 3}
