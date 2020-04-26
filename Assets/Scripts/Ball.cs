@@ -63,7 +63,7 @@ public class Ball : MonoBehaviour
 
 
             Vector2 myVelocity = GetComponent<Rigidbody2D>().velocity;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(myVelocity.x + Random.Range(-.5f, .5f), myVelocity.y + Random.Range(-.5f, .5f));
+            GetComponent<Rigidbody2D>().velocity += new Vector2(Random.Range(0f, .2f), Random.Range(0f, .2f));
         }
     }
 }

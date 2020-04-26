@@ -32,16 +32,11 @@ public class Game : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    void Start()
-    {
-        // UpdateText();
-        // UpdateLifeText();
-
-    }
 
     private void UpdateText()
     {
-        scoreText.text = score.ToString();
+
+        FindObjectOfType<ScoreText>().GetComponent<Text>().text = score.ToString();
     }
 
     public void UpdateScore(int value)
@@ -53,7 +48,8 @@ public class Game : MonoBehaviour
 
     private void UpdateLifeText()
     {
-        lifeText.text = lives.ToString();
+
+        FindObjectOfType<LifeText>().GetComponent<Text>().text = lives.ToString();
     }
 
     public void LoseLife()

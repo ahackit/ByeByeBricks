@@ -1701,9 +1701,10 @@ GameObject:
   - component: {fileID: 1640802786}
   - component: {fileID: 1640802788}
   - component: {fileID: 1640802787}
+  - component: {fileID: 1640802789}
   m_Layer: 5
   m_Name: LifesText
-  m_TagString: Untagged
+  m_TagString: LifeText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1768,6 +1769,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640802785}
   m_CullTransparentMesh: 0
+--- !u!114 &1640802789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640802785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628cc8bb350f0724c9c13bd6dfe5ef3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1650519414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2334,9 +2347,10 @@ GameObject:
   - component: {fileID: 2088877971}
   - component: {fileID: 2088877973}
   - component: {fileID: 2088877972}
+  - component: {fileID: 2088877974}
   m_Layer: 5
   m_Name: ScoreText
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2401,6 +2415,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088877970}
   m_CullTransparentMesh: 0
+--- !u!114 &2088877974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088877970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d58a32debb363142829088996056cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2089756187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1735025873681473803, guid: 28827ed2fbe860249a9605ec50f8a1a8,
