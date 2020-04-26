@@ -134,3 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle: {fileID: 0}
+  arrowPrefab: {fileID: -4610695785356563798, guid: 0a953c79cf007434b9ce0d70bb50e3b5,
+    type: 3}

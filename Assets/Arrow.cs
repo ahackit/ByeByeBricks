@@ -25,16 +25,27 @@ public class Arrow : MonoBehaviour
         float newX = target.transform.position.x - currentDistance;
         float currentZ = transform.rotation.eulerAngles.z;
         transform.position = new Vector2(newX, transform.position.y);
-        if (currentZ >= 180f && currentZ < 270f)
+        if (currentZ >= 90f && currentZ <= 180f)
         {
             currentRotation = -120f;
         }
-        else if (currentZ >= 0f && currentZ > 270f)
+        if (currentZ <= 270f && currentZ >= 180f)
         {
             currentRotation = 120f;
         }
         transform.RotateAround(target.transform.position, transform.forward, currentRotation * Time.deltaTime);
         currentDistance = target.transform.position.x - transform.position.x;
 
+    }
+
+
+    public Vector2 GetDirection()
+    {
+        return transform.position;
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }
