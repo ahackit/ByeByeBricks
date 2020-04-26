@@ -96,6 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddleSpeed: 10
+  sprites:
+  - {fileID: 21300000, guid: 2e5c922c226dfb44da26ab57ca8bab9e, type: 3}
+  - {fileID: 21300000, guid: 4564d743e0235a34881b32d7bf4c08ec, type: 3}
+  - {fileID: 21300000, guid: be12410a5ceae7943ac3add6af36c94e, type: 3}
 --- !u!60 &6092745414784641187
 PolygonCollider2D:
   m_ObjectHideFlags: 0

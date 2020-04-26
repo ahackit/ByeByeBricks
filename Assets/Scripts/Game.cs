@@ -8,13 +8,29 @@ public class Game : MonoBehaviour
 
     [SerializeField] Text scoreText;
     [SerializeField] Text lifeText;
+
+    [SerializeField] int selectedClass;
     public int lives = 3;
     int score = 0;
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        int gameStatusCount = FindObjectsOfType<Game>().Length;
+        if (gameStatusCount > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     void Start()
     {
-        UpdateText();
-        UpdateLifeText();
+        // UpdateText();
+        // UpdateLifeText();
 
     }
 
@@ -44,5 +60,14 @@ public class Game : MonoBehaviour
         }
         UpdateLifeText();
 
+    }
+
+    public void SetClass(int classNumber)
+    {
+        selectedClass = classNumber;
+    }
+    public int GetClass()
+    {
+        return selectedClass;
     }
 }

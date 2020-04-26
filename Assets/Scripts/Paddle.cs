@@ -5,11 +5,15 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     [SerializeField] float paddleSpeed = 10f;
-
+    [SerializeField] Sprite[] sprites;
     float direction;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log(FindObjectOfType<Game>().GetClass());
+        GetComponent<SpriteRenderer>().sprite = sprites[FindObjectOfType<Game>().GetClass()];
 
     }
 
