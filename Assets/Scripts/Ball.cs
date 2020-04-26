@@ -16,6 +16,9 @@ public class Ball : MonoBehaviour
     {
         originalHeight = transform.position.y;
 
+        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + .7f, 0);
+        Instantiate(arrowPrefab, newPosition, Quaternion.identity);
+
     }
 
     // Update is called once per frame
@@ -45,5 +48,16 @@ public class Ball : MonoBehaviour
 
         Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + .7f, 0);
         Instantiate(arrowPrefab, newPosition, Quaternion.identity);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isFired)
+        {
+
+
+            Vector2 myVelocity = GetComponent<Rigidbody2D>().velocity;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(myVelocity.x + Random.Range(-.5f, .5f), myVelocity.y + Random.Range(-.5f, .5f));
+        }
     }
 }
