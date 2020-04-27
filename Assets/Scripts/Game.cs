@@ -63,6 +63,16 @@ public class Game : MonoBehaviour
 
     }
 
+    public int GetLife()
+    {
+        return lives;
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
     public void SetClass(int classNumber)
     {
         selectedClass = classNumber;

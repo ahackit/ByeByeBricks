@@ -66,4 +66,9 @@ public class Ball : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity += new Vector2(Random.Range(0f, .2f), Random.Range(0f, .2f));
         }
     }
+
+    public bool IsFired()
+    {
+        return isFired;
+    }
 }

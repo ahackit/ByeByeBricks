@@ -22,6 +22,9 @@ public class Paddle : MonoBehaviour
                 transform.localScale = new Vector3(1.5f, 1f, 1f);
                 paddleSpeed = 8f;
                 break;
+            case 1:
+                paddleSpeed = 15f;
+                break;
             default:
                 break;
 

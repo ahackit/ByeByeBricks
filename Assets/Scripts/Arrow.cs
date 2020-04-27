@@ -13,7 +13,14 @@ public class Arrow : MonoBehaviour
     void Start()
     {
 
-        target = FindObjectOfType<Ball>();
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball ball in balls)
+        {
+            if (!ball.IsFired())
+            {
+                target = ball;
+            }
+        }
         currentDistance = target.transform.position.x - transform.position.x;
 
     }

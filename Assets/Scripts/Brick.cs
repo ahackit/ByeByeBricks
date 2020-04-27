@@ -10,6 +10,7 @@ public class Brick : MonoBehaviour
 
     [SerializeField] int hitpoints;
     [SerializeField] Sprite[] sprites;
+    [SerializeField] GameObject particleSystem;
 
     int currentSpriteIndex = 0;
 
@@ -20,13 +21,17 @@ public class Brick : MonoBehaviour
         {
             if (Random.Range(0f, 1f) <= FindObjectOfType<Game>().GetDropRate())
             {
-                if (Random.Range(0f, 1f) > .75f)
+                if (Random.Range(0f, 1f) > .75f && FindObjectOfType<Game>().GetClass() == 2)
                 {
                     Instantiate(bomb, transform.position, Quaternion.identity);
                 }
-                Instantiate(items[0], transform.position, Quaternion.identity);
-            }
+                else
+                {
+                    Instantiate(items[0], transform.position, Quaternion.identity);
+                }
 
+            }
+            Instantiate(particleSystem, transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;
         }

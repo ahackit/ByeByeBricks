@@ -32,8 +32,18 @@ public class BottomWall : MonoBehaviour
             Destroy(collider.gameObject);
             return;
         }
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball ball in balls)
+        {
+            if (!ball.IsFired())
+            {
+                Destroy(collider.gameObject);
+                return;
 
+            }
+        }
         collider.gameObject.GetComponent<Ball>().Reset();
+
 
     }
 }
