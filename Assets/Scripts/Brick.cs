@@ -27,7 +27,8 @@ public class Brick : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(items[0], transform.position, Quaternion.identity);
+                    int index = Random.Range(0, items.Length);
+                    Instantiate(items[index], transform.position, Quaternion.identity);
                 }
 
             }

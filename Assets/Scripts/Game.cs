@@ -113,4 +113,13 @@ public class Game : MonoBehaviour
     {
         return dropRate;
     }
+
+    public void FireActivated()
+    {
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball ball in balls)
+        {
+            ball.SetFire();
+        }
+    }
 }

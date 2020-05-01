@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
 
     bool isFired = false;
     float originalHeight;
+    Vector2 myVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        myVelocity = GetComponent<Rigidbody2D>().velocity;
         if (Input.GetKeyDown("space") && !isFired)
         {
             isFired = true;
@@ -62,13 +64,23 @@ public class Ball : MonoBehaviour
         {
 
 
-            Vector2 myVelocity = GetComponent<Rigidbody2D>().velocity;
-            GetComponent<Rigidbody2D>().velocity += new Vector2(Random.Range(0f, .2f), Random.Range(0f, .2f));
+
+            GetComponent<Rigidbody2D>().velocity = myVelocity;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
     }
 
     public bool IsFired()
     {
         return isFired;
+    }
+    public void SetFire()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponent<CircleCollider2D>().isTrigger = true;
     }
 }

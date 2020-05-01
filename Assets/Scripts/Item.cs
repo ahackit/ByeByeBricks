@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [SerializeField] string type;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,15 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        FindObjectOfType<Game>().UpdateScore(100);
+        if (type == "coin")
+        {
+            FindObjectOfType<Game>().UpdateScore(100);
+        }
+        if (type == "fire")
+        {
+            FindObjectOfType<Game>().FireActivated();
+        }
+
         Destroy(gameObject);
     }
 }

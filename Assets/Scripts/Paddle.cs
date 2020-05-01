@@ -45,6 +45,6 @@ public class Paddle : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 ballVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
-        ballVelocity = new Vector2(ballVelocity.x * direction, ballVelocity.y);
+        ballVelocity = new Vector2(ballVelocity.x + direction, ballVelocity.y);
     }
 }
