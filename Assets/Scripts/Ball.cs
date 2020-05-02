@@ -8,8 +8,11 @@ public class Ball : MonoBehaviour
     [SerializeField] Paddle paddle;
     [SerializeField] Arrow arrowPrefab;
 
+    float timePassed;
+    float currentTime = 0f;
 
     bool isFired = false;
+    bool fire = false;
     float originalHeight;
     Vector2 myVelocity;
     // Start is called before the first frame update
@@ -25,6 +28,20 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fire)
+        {
+            timePassed += Time.deltaTime;
+            if (Mathf.Floor(timePassed) > currentTime)
+            {
+                currentTime = Mathf.Floor(timePassed);
+            }
+        }
+        if (currentTime > 5)
+        {
+            SetUnfire();
+
+        }
+
         myVelocity = GetComponent<Rigidbody2D>().velocity;
         if (Input.GetKeyDown("space") && !isFired)
         {
@@ -60,18 +77,14 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isFired)
+
+        if (fire)
         {
-
-
-
-            GetComponent<Rigidbody2D>().velocity = myVelocity;
+            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Bricks"))
+            {
+                GetComponent<Rigidbody2D>().velocity = myVelocity + new Vector2(Random.Range(0f, 0.3f), Random.Range(0f, 0.3f));
+            }
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy(collision.gameObject);
     }
 
     public bool IsFired()
@@ -80,7 +93,14 @@ public class Ball : MonoBehaviour
     }
     public void SetFire()
     {
+        timePassed = 0f;
+        currentTime = 0f;
+        fire = true;
         GetComponent<SpriteRenderer>().color = Color.red;
-        GetComponent<CircleCollider2D>().isTrigger = true;
+    }
+    public void SetUnfire()
+    {
+        fire = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
