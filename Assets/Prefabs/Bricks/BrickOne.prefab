@@ -126,6 +126,7 @@ MonoBehaviour:
   items:
   - {fileID: -3787088482028934768, guid: 9f394122b929ab242878dfe6bdeaec77, type: 3}
   - {fileID: -5787690538602322403, guid: 9e382e2f94f8b6c4796907fb6869188a, type: 3}
+  - {fileID: 5700791191526613073, guid: 1b310fbd038a07d48b650bcacb0840a0, type: 3}
   bomb: {fileID: 4514705019102504068, guid: 65c1e58cf84fa3f4d95ae7af40493244, type: 3}
   hitpoints: 1
   sprites: []
