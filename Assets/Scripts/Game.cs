@@ -128,4 +128,10 @@ public class Game : MonoBehaviour
         Paddle paddle = FindObjectOfType<Paddle>();
         paddle.ActivateSpeedy();
     }
+
+    public void AddLife()
+    {
+        lives += 1;
+        UpdateLifeText();
+    }
 }
