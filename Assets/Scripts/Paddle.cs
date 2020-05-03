@@ -6,14 +6,19 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] float paddleSpeed = 10f;
     float startingSpeed;
+    Vector3 startingScale;
     [SerializeField] Sprite[] sprites;
     float direction;
     int currentClass;
 
+    bool speedActivated;
     float timePassed;
     float currentTime = 0f;
+    bool sizeyActive;
+    float timePassedSizey;
+    float currentTimeSizey = 0f;
 
-    bool speedActivated;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +41,7 @@ public class Paddle : MonoBehaviour
         }
 
         startingSpeed = paddleSpeed;
+        startingScale = transform.localScale;
 
 
     }
@@ -55,6 +61,21 @@ public class Paddle : MonoBehaviour
         if (currentTime > 5)
         {
             DeactivateSpeedy();
+
+        }
+
+
+        if (sizeyActive)
+        {
+            timePassedSizey += Time.deltaTime;
+            if (Mathf.Floor(timePassedSizey) > currentTimeSizey)
+            {
+                currentTimeSizey = Mathf.Floor(timePassedSizey);
+            }
+        }
+        if (currentTimeSizey > 5)
+        {
+            DeactivateSizey();
 
         }
         direction = Input.GetAxis("Horizontal");
@@ -82,4 +103,17 @@ public class Paddle : MonoBehaviour
         timePassed = 0f;
         currentTime = 0f;
     }
+
+    public void ActivateSizey()
+    {
+        sizeyActive = true;
+        transform.localScale = startingScale;
+        transform.localScale = new Vector3(transform.localScale.x * 1.5f, 1f, 1f);
+    }
+    public void DeactivateSizey()
+    {
+        transform.localScale = startingScale;
+        sizeyActive = false;
+    }
+
 }
