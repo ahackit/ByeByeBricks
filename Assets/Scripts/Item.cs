@@ -40,6 +40,10 @@ public class Item : MonoBehaviour
             {
                 FindObjectOfType<Game>().AddLife();
             }
+            else if (type == "sizeup")
+            {
+                FindObjectOfType<Game>().AddSize();
+            }
         }
 
 

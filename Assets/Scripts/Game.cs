@@ -134,4 +134,10 @@ public class Game : MonoBehaviour
         lives += 1;
         UpdateLifeText();
     }
+
+    public void AddSize()
+    {
+        Paddle paddle = FindObjectOfType<Paddle>();
+        paddle.ActivateSizey();
+    }
 }
