@@ -122,4 +122,10 @@ public class Game : MonoBehaviour
             ball.SetFire();
         }
     }
+
+    public void SpeedActivated()
+    {
+        Paddle paddle = FindObjectOfType<Paddle>();
+        paddle.ActivateSpeedy();
+    }
 }
