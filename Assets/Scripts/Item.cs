@@ -19,14 +19,25 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (type == "coin")
+
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Paddle"))
         {
-            FindObjectOfType<Game>().UpdateScore(100);
+
+
+            if (type == "coin")
+            {
+                FindObjectOfType<Game>().UpdateScore(100);
+            }
+            if (type == "fire")
+            {
+                FindObjectOfType<Game>().FireActivated();
+            }
+            if (type == "speed")
+            {
+                FindObjectOfType<Game>().SpeedActivated();
+            }
         }
-        if (type == "fire")
-        {
-            FindObjectOfType<Game>().FireActivated();
-        }
+
 
         Destroy(gameObject);
     }
