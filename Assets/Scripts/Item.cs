@@ -28,13 +28,17 @@ public class Item : MonoBehaviour
             {
                 FindObjectOfType<Game>().UpdateScore(100);
             }
-            if (type == "fire")
+            else if (type == "fire")
             {
                 FindObjectOfType<Game>().FireActivated();
             }
-            if (type == "speed")
+            else if (type == "speed")
             {
                 FindObjectOfType<Game>().SpeedActivated();
+            }
+            else if (type == "oneup")
+            {
+                FindObjectOfType<Game>().AddLife();
             }
         }
 
