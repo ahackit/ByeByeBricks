@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [SerializeField] string type;
+    [SerializeField] AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +45,8 @@ public class Item : MonoBehaviour
             {
                 FindObjectOfType<Game>().AddSize();
             }
+            AudioSource.PlayClipAtPoint(clip, transform.position);
         }
-
 
         Destroy(gameObject);
     }
