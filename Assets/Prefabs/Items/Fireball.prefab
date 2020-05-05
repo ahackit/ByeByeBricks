@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: fire
+  clip: {fileID: 8300000, guid: 91739fd928b765e4caf459789924bcc5, type: 3}

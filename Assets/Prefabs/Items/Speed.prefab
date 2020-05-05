@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: speed
+  clip: {fileID: 8300000, guid: 91739fd928b765e4caf459789924bcc5, type: 3}
 --- !u!50 &4292046506514771600
 Rigidbody2D:
   serializedVersion: 4
