@@ -58,6 +58,8 @@ public class Game : MonoBehaviour
         if (lives < 0)
         {
             FindObjectOfType<LevelLoader>().LoadNextLevel();
+            lives = 3;
+            score = 0;
         }
         UpdateLifeText();
 
