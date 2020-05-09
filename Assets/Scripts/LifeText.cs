@@ -8,7 +8,7 @@ public class LifeText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Text>().text = FindObjectOfType<Game>().GetLife().ToString();
+        GetComponent<Text>().text = "LIFES: " + FindObjectOfType<Game>().GetLife().ToString();
 
     }
 

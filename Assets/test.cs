@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ScoreText : MonoBehaviour
+public class test : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Text>().text = "SCORE: " + FindObjectOfType<Game>().GetScore().ToString();
+        Debug.Log(GetComponent<RectTransform>().rect.xMax);
+
+
     }
 
     // Update is called once per frame
