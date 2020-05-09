@@ -21,7 +21,7 @@ public class GameTimeText : MonoBehaviour
         if (Mathf.Floor(timePassed) > currentTime)
         {
             currentTime = Mathf.Floor(timePassed);
-            GetComponent<Text>().text = currentTime.ToString();
+            GetComponent<Text>().text = "TIME: " + currentTime.ToString();
         }
 
 

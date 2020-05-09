@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  cursorTexture: {fileID: 2800000, guid: 5cb6e4f5719c96b4cb9202879d2281f2, type: 3}
   lifeText: {fileID: 0}
+  selectedClass: 0
   lives: 3

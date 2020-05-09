@@ -45,8 +45,12 @@ public class Item : MonoBehaviour
             {
                 FindObjectOfType<Game>().AddSize();
             }
+            else if (type == "bomb")
+            {
+                FindObjectOfType<Game>().LoseLife();
+            }
             AudioSource.PlayClipAtPoint(clip, transform.position);
-        } 
+        }
 
         Destroy(gameObject);
     }

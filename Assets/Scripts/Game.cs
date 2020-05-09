@@ -7,6 +7,8 @@ public class Game : MonoBehaviour
 {
 
     [SerializeField] Text scoreText;
+
+    [SerializeField] Texture2D cursorTexture;
     [SerializeField] Text lifeText;
 
     [SerializeField] int selectedClass;
@@ -29,6 +31,7 @@ public class Game : MonoBehaviour
         }
         else
         {
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -36,7 +39,7 @@ public class Game : MonoBehaviour
     private void UpdateText()
     {
 
-        FindObjectOfType<ScoreText>().GetComponent<Text>().text = score.ToString();
+        FindObjectOfType<ScoreText>().GetComponent<Text>().text = "SCORE: " + score.ToString();
     }
 
     public void UpdateScore(int value)
@@ -49,7 +52,7 @@ public class Game : MonoBehaviour
     private void UpdateLifeText()
     {
 
-        FindObjectOfType<LifeText>().GetComponent<Text>().text = lives.ToString();
+        FindObjectOfType<LifeText>().GetComponent<Text>().text = "LIFES: " + lives.ToString();
     }
 
     public void LoseLife()
@@ -58,6 +61,8 @@ public class Game : MonoBehaviour
         if (lives < 0)
         {
             FindObjectOfType<LevelLoader>().LoadNextLevel();
+            lives = 3;
+            score = 0;
         }
         UpdateLifeText();
 
