@@ -10,7 +10,7 @@ public class Brick : MonoBehaviour
 
     [SerializeField] int hitpoints;
     [SerializeField] Sprite[] sprites;
-    [SerializeField] GameObject particleSystem;
+    [SerializeField] GameObject[] particleSystems;
     [SerializeField] AudioClip hitClip;
     [SerializeField] AudioClip deathClip;
 
@@ -34,11 +34,12 @@ public class Brick : MonoBehaviour
                 }
 
             }
-            Instantiate(particleSystem, transform.position, Quaternion.identity);
+            Instantiate(particleSystems[currentSpriteIndex], transform.position, Quaternion.identity);
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(gameObject);
             return;
         }
+        Instantiate(particleSystems[currentSpriteIndex], transform.position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(hitClip, transform.position);
         GetComponent<SpriteRenderer>().sprite = sprites[currentSpriteIndex];
         currentSpriteIndex++;
