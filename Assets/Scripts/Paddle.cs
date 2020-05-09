@@ -114,6 +114,9 @@ public class Paddle : MonoBehaviour
     {
         transform.localScale = startingScale;
         sizeyActive = false;
+        timePassedSizey = 0f;
+        currentTimeSizey = 0f;
+
     }
 
 }
