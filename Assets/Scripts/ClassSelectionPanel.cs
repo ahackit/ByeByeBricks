@@ -6,6 +6,14 @@ using UnityEngine.EventSystems;
 public class ClassSelectionPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private bool mouse_over = false;
+    private Color startingColor;
+
+
+    void Start()
+    {
+        startingColor = GetComponent<Image>().color;
+
+    }
     void Update()
     {
     }
@@ -19,6 +27,6 @@ public class ClassSelectionPanel : MonoBehaviour, IPointerEnterHandler, IPointer
     public void OnPointerExit(PointerEventData eventData)
     {
         mouse_over = false;
-        gameObject.GetComponent<Image>().color = Color.white;
+        gameObject.GetComponent<Image>().color = startingColor;
     }
 }
