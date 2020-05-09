@@ -132,8 +132,8 @@ MonoBehaviour:
   bomb: {fileID: 4514705019102504068, guid: 65c1e58cf84fa3f4d95ae7af40493244, type: 3}
   hitpoints: 1
   sprites: []
-  particleSystem: {fileID: 6309470330699471382, guid: e60842b8efefb4c47a895be397179fef,
-    type: 3}
+  particleSystems:
+  - {fileID: 6309470330699471382, guid: e60842b8efefb4c47a895be397179fef, type: 3}
   hitClip: {fileID: 8300000, guid: 7abade6f03eb49c438853657f90847cf, type: 3}
   deathClip: {fileID: 8300000, guid: c00cf3611eb97c04fa34516ac4ecd8d9, type: 3}
 --- !u!198 &1140950369

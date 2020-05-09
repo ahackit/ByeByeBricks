@@ -96,12 +96,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
+  - {fileID: 6335574751930334335, guid: 8132946c61255324a8dd8f16526474c3, type: 3}
   - {fileID: -3787088482028934768, guid: 9f394122b929ab242878dfe6bdeaec77, type: 3}
+  - {fileID: -5787690538602322403, guid: 9e382e2f94f8b6c4796907fb6869188a, type: 3}
+  - {fileID: 5700791191526613073, guid: 1b310fbd038a07d48b650bcacb0840a0, type: 3}
+  - {fileID: 7928182659214616631, guid: e9d51c031fadfde4ab3bcaafa41b3de2, type: 3}
   bomb: {fileID: 4514705019102504068, guid: 65c1e58cf84fa3f4d95ae7af40493244, type: 3}
   hitpoints: 2
   sprites:
   - {fileID: 21300000, guid: 73973a3da131f2b44b49a15e0cb23be7, type: 3}
-  particleSystem: {fileID: 0}
+  particleSystems:
+  - {fileID: 8628797872866257837, guid: bbe51057d471aef4b820ee5b30c1bc78, type: 3}
+  - {fileID: 6309470330699471382, guid: e60842b8efefb4c47a895be397179fef, type: 3}
   hitClip: {fileID: 8300000, guid: 7abade6f03eb49c438853657f90847cf, type: 3}
   deathClip: {fileID: 8300000, guid: c00cf3611eb97c04fa34516ac4ecd8d9, type: 3}
 --- !u!61 &4154708530837578460
