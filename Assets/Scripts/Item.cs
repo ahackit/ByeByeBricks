@@ -46,7 +46,7 @@ public class Item : MonoBehaviour
                 FindObjectOfType<Game>().AddSize();
             }
             AudioSource.PlayClipAtPoint(clip, transform.position);
-        }
+        } 
 
         Destroy(gameObject);
     }
