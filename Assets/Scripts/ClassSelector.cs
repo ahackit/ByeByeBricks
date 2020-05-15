@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class ClassSelector : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(GetComponent<RectTransform>().rect.xMax);
-
 
     }
 
@@ -16,5 +14,15 @@ public class test : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void SetClass(int value)
+    {
+        FindObjectOfType<Game>().SetClass(value);
+    }
+
+    public void LoadFirstLevel()
+    {
+        FindObjectOfType<Game>().LoadFirstLevel();
     }
 }
