@@ -13,6 +13,7 @@ public class Game : MonoBehaviour
 
     [SerializeField] int selectedClass;
     public int lives = 3;
+    public int bricks = 0;
     int score = 0;
 
     int maxFiredBalls = 1;
@@ -54,18 +55,44 @@ public class Game : MonoBehaviour
 
         FindObjectOfType<LifeText>().GetComponent<Text>().text = "LIFES: " + lives.ToString();
     }
+    public void LoadFirstLevel()
+    {
+
+        FindObjectOfType<LevelLoader>().LoadNextLevel();
+        lives = 3;
+        bricks = 0;
+        currentFiredBalls = 0;
+        score = 0;
+    }
+    public void BrickSpawned()
+    {
+        bricks++;
+    }
+    public void BrickBroken()
+    {
+        bricks--;
+        UpdateScore(10);
+        if (bricks == 0)
+        {
+            FindObjectOfType<LevelLoader>().LoadNextLevel();
+            currentFiredBalls = 0;
+            bricks = 0;
+
+        }
+
+    }
+
 
     public void LoseLife()
     {
         lives -= 1;
         if (lives < 0)
         {
-            FindObjectOfType<LevelLoader>().LoadNextLevel();
+            FindObjectOfType<LevelLoader>().LoadGameOver();
             lives = 3;
             score = 0;
         }
         UpdateLifeText();
-
     }
 
     public int GetLife()

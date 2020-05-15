@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity);
         if (fire)
         {
             timePassed += Time.deltaTime;
@@ -82,9 +83,11 @@ public class Ball : MonoBehaviour
         {
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Bricks"))
             {
+                Destroy(collision.collider.gameObject);
                 GetComponent<Rigidbody2D>().velocity = myVelocity + new Vector2(Random.Range(0f, 0.3f), Random.Range(0f, 0.3f));
             }
         }
+
     }
 
     public bool IsFired()
