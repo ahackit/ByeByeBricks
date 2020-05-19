@@ -33,10 +33,8 @@ public class Brick : MonoBehaviour
                 int index = Random.Range(0, items.Length);
                 Instantiate(items[index], transform.position, Quaternion.identity);
             }
-
         }
-        hitpoints -= 1;
-        if (hitpoints <= 0)
+        if (collision.gameObject.GetComponent<Ball>().IsOnFire())
         {
             Instantiate(particleSystems[currentSpriteIndex], transform.position, Quaternion.identity);
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
@@ -44,11 +42,25 @@ public class Brick : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        else
+        {
+            hitpoints -= 1;
+            if (hitpoints <= 0)
+            {
+                Instantiate(particleSystems[currentSpriteIndex], transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(deathClip, transform.position);
+                FindObjectOfType<Game>().BrickBroken();
+                Destroy(gameObject);
+                return;
+            }
 
-        Instantiate(particleSystems[currentSpriteIndex], transform.position, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(hitClip, transform.position);
-        GetComponent<SpriteRenderer>().sprite = sprites[currentSpriteIndex];
-        currentSpriteIndex++;
+            Instantiate(particleSystems[currentSpriteIndex], transform.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(hitClip, transform.position);
+            GetComponent<SpriteRenderer>().sprite = sprites[currentSpriteIndex];
+            currentSpriteIndex++;
+        }
+
 
     }
+
 }
