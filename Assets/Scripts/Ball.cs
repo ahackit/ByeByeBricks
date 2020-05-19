@@ -79,7 +79,6 @@ public class Ball : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
 
-        Debug.Log(myVelocity);
         if (fire)
         {
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Bricks"))
