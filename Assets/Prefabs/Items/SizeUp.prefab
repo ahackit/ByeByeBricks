@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7928182659214616630}
   - component: {fileID: 7928182659214616629}
   - component: {fileID: 7928182659214616631}
-  - component: {fileID: -4141575902152792198}
+  - component: {fileID: -8226801896897422161}
   m_Layer: 10
   m_Name: SizeUp
   m_TagString: Untagged
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: sizeup
   clip: {fileID: 8300000, guid: 91739fd928b765e4caf459789924bcc5, type: 3}
---- !u!50 &-4141575902152792198
+--- !u!50 &-8226801896897422161
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7928182659214616628}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

@@ -15,6 +15,7 @@ public class Ball : MonoBehaviour
     bool fire = false;
     float originalHeight;
     Vector2 myVelocity;
+    private Vector2 addedForce = new Vector2(3f, 3f);
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,6 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.GetComponent<Rigidbody2D>().velocity);
         if (fire)
         {
             timePassed += Time.deltaTime;
@@ -83,9 +83,22 @@ public class Ball : MonoBehaviour
         {
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Bricks"))
             {
-                Destroy(collision.collider.gameObject);
                 GetComponent<Rigidbody2D>().velocity = myVelocity + new Vector2(Random.Range(0f, 0.3f), Random.Range(0f, 0.3f));
             }
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().AddForce(addedForce, ForceMode2D.Force);
+        }
+
+        if (myVelocity.y == 0.0f && isFired)
+        {
+            GetComponent<Rigidbody2D>().velocity = myVelocity + new Vector2(0, 3f);
+        }
+
+        if (myVelocity.x == 0.0f && isFired)
+        {
+            GetComponent<Rigidbody2D>().velocity = myVelocity + new Vector2(3f, 0f);
         }
 
     }
@@ -105,5 +118,10 @@ public class Ball : MonoBehaviour
     {
         fire = false;
         GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    public bool IsOnFire()
+    {
+        return fire;
     }
 }
