@@ -90,7 +90,6 @@ public class Game : MonoBehaviour
         {
             FindObjectOfType<LevelLoader>().LoadGameOver();
             lives = 3;
-            score = 0;
         }
         UpdateLifeText();
     }
